@@ -1,6 +1,6 @@
 var express = require('express'), fs = require('fs');
 
-var buffer = fs.readFileSync('/home/ubuntu/bitstarter/index.html');
+var buffer = fs.readFileSync('index.html');
 
 var app = express.createServer(express.logger());
 
