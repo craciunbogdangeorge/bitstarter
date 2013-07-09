@@ -3,11 +3,9 @@ var fs = require('fs');
 var buffer = new Buffer(16);
 
 fs.readFile('/bitstarter/index.html', function (err, data) {
-  if (err) throw err;
-  console.log(data);
+  if (err) { throw err; }
+  buffer = data;
 });
-
-buffer = data;
 
 var app = express.createServer(express.logger());
 
