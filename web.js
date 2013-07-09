@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var buffer;
 
-fs.readFile('/bitstarter/index.html', function (err, data) {
+fs.readFile('/bitstarter', function (err, data) {
   if (err) { throw err; }
   buffer = data;
   console.log(buffer);    
