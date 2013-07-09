@@ -4,7 +4,7 @@ var buffer = new Buffer(16);
 
 fs.readFile('/bitstarter/index.html', function (err, data) {
   if (err) { throw err; }
-  return data;
+  console.log(data);
 });
 
 var app = express.createServer(express.logger());
