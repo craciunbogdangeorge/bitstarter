@@ -14,6 +14,6 @@ app.listen(port, function() {
 
 var buffer = fs.readFile('/bitstarter/index.html', function (err, data) {
   if (err) throw err;
-  console.log(data);
+  return data;
 });
 
