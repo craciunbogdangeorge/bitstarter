@@ -2,10 +2,10 @@ var express = require('express');
 var fs = require('fs');
 var buffer = new Buffer(16);
 
-fs.readFile('/bitstarter/index.html', function (err, data) {
+var buffer = function() { fs.readFile('/bitstarter/index.html', function (err, data) {
   if (err) { throw err; }
-  buffer = data;
-});
+  return data;
+})};
 
 var app = express.createServer(express.logger());
 
