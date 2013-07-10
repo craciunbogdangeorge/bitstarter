@@ -64,6 +64,11 @@ var clone = function(fn) {
     return fn.bind({});
 };
 
+/*
+ * The function is a sample from the restler library of Dan Webb:
+ * https://github.com/danwrong/restler
+ */
+
 var checkURL = function(url) {
     rest.get(url).on('complete', function(result) {
 	if (result instanceof Error) {
@@ -80,8 +85,7 @@ if(require.main == module) {
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-u, --url <url>', 'Path to url')
-        .parse(process.argv);
-    //var checkJson = checkURL(program.url);
+        .parse(process.argv);    
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
