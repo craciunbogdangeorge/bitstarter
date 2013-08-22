@@ -118,7 +118,31 @@
     </script>
     </head>
   <body>
+    <!-- facebook integration -->
+    <div id="fb-root"></div>
+    <script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '120964674743712',                        // App ID from the app dashboard
+      channelUrl : '//www.bogdangeorge-bitstarter-mooc.herokuapp.com/index.html', // Channel file for x-domain comms
+      status     : true,                                 // Check Facebook Login status
+      xfbml      : true                                  // Look for social plugins on the page
+    });
 
+    // Additional initialization code such as adding Event Listeners goes here
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=120964674743712";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
     <!-- Mobile-friendly navbar adapter from example. -->
     <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -137,12 +161,22 @@
 	      <li><a href="#about">About</a></li>
 	      <li><a href="/orders">Orders</a></li>
 	      <li><a href="#contact">Contact</a></li>
+	      <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log in <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+		<li><a href="#">Existing user</a></li>  
+		<li><a href="#"><div class="fb-login-button" autologoutlink="true" scope="publish_stream" data-show-faces="false" data-width="200" data-max-rows="1">Login with fb</div></a></li>
+		
+		</ul>
+	      </li>
+	      
 	    </ul>
 	      <form class="navbar-form pull-right">
               <input class="span2" type="text" placeholder="Email">
               <input class="span2" type="password" placeholder="Password">
-              <button type="submit" class="btn">Sign in</button>
-            </form>
+              <button type="submit" class="btn">Sign up</button>
+              </form>
+	      
 	  </div><!--/.nav-collapse -->
 	</div>
       </div>
@@ -296,7 +330,7 @@ Verify something if you're curious about it, try it and share with others.
                 </div>
                 <div id="collapseOne" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    Sharing opinions about places(e.g. restaurants, bars, resorts), products(e.g. beers, sodas, food) or anything that you wish.
+                    Sharing opinions about places (e.g. restaurants, bars, resorts), products (e.g. beers, sodas, food) or anything that you wish.
                   </div>
                 </div>
               </div>
@@ -339,6 +373,6 @@ Verify something if you're curious about it, try it and share with others.
   ga('create', 'UA-43020078-1', 'herokuapp.com');
   ga('send', 'pageview');
 
-  </script>  
+  </script>
   </body>
 </html>
