@@ -64,6 +64,9 @@ ial-buttons.css">
       }
 
     </style>
+  <script src="https://hub.loginradius.com/include/js/LoginRadius.js" ></script>
+<script type="text/javascript">      var options={};      options.login=true;       
+LoginRadius_SocialLogin.util.ready(function () { $ui = LoginRadius_SocialLogin.lr_login_settings;$ui.interfacesize = "";$ui.apikey = "3213096e-b04c-47d2-9e86-f02dfb1a9089";$ui.callback=""; $ui.lrinterfacecontainer ="interfacecontainerdiv"; LoginRadius_SocialLogin.init(options);  }); </script>  
   </head>  
   <body>
     <!-- Header -->
@@ -115,7 +118,7 @@ ial-buttons.css">
     <div class="span5 offset1">
       <img src="http://i.imgur.com/BXiqWKr.jpg?3" title="Get connected" alt="Register"/></a>
     </div>
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    
+    <div id="interfacecontainerdiv" class="interfacecontainerdiv"></div>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>    
   </body>  
 </html>
