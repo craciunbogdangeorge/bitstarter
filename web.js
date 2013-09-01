@@ -26,7 +26,11 @@ app.get('/', function(request, response) {
     response.send("error retrieving orders");
   });
 });
-
+// Render example.com/signup
+app.get('/signup', function(request, response) {
+  var data = fs.readFileSync('signup.html').toString();
+  response.send(data);
+});
 // Render example.com/orders
 app.get('/orders', function(request, response) {
   global.db.Order.findAll().success(function(orders) {
